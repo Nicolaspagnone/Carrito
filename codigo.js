@@ -121,7 +121,7 @@ const llaves = {
 
 function returnLlaves() {
     let location = window.location.pathname
-    if (location === "/" || location === "/index.html" || location === "/Carrito-de-Compras/index.html" || location === "/Carrito-de-Compras/") {
+    if (location === "/" || location === "/index.html" || location === "/Carrito/index.html" || location === "/Carrito/") {
         
   
     let $fragment = d.createDocumentFragment()
