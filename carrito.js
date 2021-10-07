@@ -57,7 +57,7 @@ let total = 0
 export function mostrarCarrito(carrito) {
 
     let location = window.location.pathname
-    if (location === "/carrito.html") {
+    if (location === "/carrito.html" || location === "/Carrito/carrito.html") {
      
     if(carrito.length === 0){
 
