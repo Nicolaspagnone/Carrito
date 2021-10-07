@@ -16,7 +16,7 @@ function darkModeOn() {
     $contMain.classList.add("darkA")
     $footer.classList.add("darkFooter")
     d.querySelectorAll("div.divLLave").forEach(e => e.classList.add("darkItem"))
-    if (window.location.pathname == "/carrito.html") {
+    if (location === "/carrito.html" || location === "/Carrito/carrito.html") {
         $mostrarCarritoHead.classList.add("mostrar-carrito-darkhead")
         $mostrarCarritoBody.classList.add("mostrar-carrito-darkbody")
         $mostrarCarritoFooter.classList.add("mostrar-carrito-darkfooter")
@@ -31,7 +31,7 @@ function darkModeOff() {
     $contMain.classList.remove("darkA")
     $footer.classList.remove("darkFooter")
     d.querySelectorAll("div.divLLave").forEach(e => e.classList.remove("darkItem"))
-    if (window.location.pathname == "/carrito.html") {
+    if (location === "/carrito.html" || location === "/Carrito/carrito.html") {
     $mostrarCarritoHead.classList.remove("mostrar-carrito-darkhead")
     $mostrarCarritoBody.classList.remove("mostrar-carrito-darkbody")
     $mostrarCarritoFooter.classList.remove("mostrar-carrito-darkfooter")
