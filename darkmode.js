@@ -1,7 +1,7 @@
 const d = document,
 $aDarkmode = d.querySelector("#imgDarkmode"),
 $header = d.querySelector("header"),
-$container = d.querySelector(".container"),
+$contenedor = d.querySelector(".contenedor"),
 $contMain = d.querySelector(".cont-main"),
 $footer = d.querySelector(".footer"),
 $mostrarCarritoHead = d.querySelector(".mostrar-carrito-head"),
@@ -13,7 +13,7 @@ location = window.location.pathname
 function darkModeOn() {
     $aDarkmode.src = "./img/sun.png"
     $header.classList.add("darkHeader")
-    $container.classList.add("darkContainer")
+    $contenedor.classList.add("darkContenedor")
     $contMain.classList.add("darkA")
     $footer.classList.add("darkFooter")
     d.querySelectorAll("div.divLLave").forEach(e => e.classList.add("darkItem"))
@@ -28,7 +28,7 @@ function darkModeOn() {
 function darkModeOff() {
     $aDarkmode.src = "./img/moon.png"
     $header.classList.remove("darkHeader")
-    $container.classList.remove("darkContainer")
+    $contenedor.classList.remove("darkContenedor")
     $contMain.classList.remove("darkA")
     $footer.classList.remove("darkFooter")
     d.querySelectorAll("div.divLLave").forEach(e => e.classList.remove("darkItem"))

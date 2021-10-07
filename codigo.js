@@ -1,8 +1,10 @@
 import {ponerCarrito,vaciarCarrito,cargarCarrito,mostrarCarrito,sumarProducto,restarProducto} from "./carrito.js"
 import {darkMode,darkModeClick} from "./darkmode.js"
+import sendForm from "./form.js"
 
 const d = document,
 $main = d.querySelector(".main"),
+$contPrincipal = d.querySelector(".cont-principal"), 
 $divItems = d.querySelector(".divItems"),
 ls = localStorage
 
@@ -34,6 +36,8 @@ d.addEventListener("DOMContentLoaded", e =>{
 
     mostrarCarrito(carrito)
 
+    sendForm()
+
 })
 
 
@@ -41,7 +45,7 @@ d.addEventListener("DOMContentLoaded", e =>{
 async function getPages(url) {
     let $res = await axios(url)
     let $data = await $res.data
-    $main.innerHTML = $data
+    $contPrincipal.innerHTML = $data
     
 }
 
