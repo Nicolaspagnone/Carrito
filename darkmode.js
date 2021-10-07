@@ -7,7 +7,8 @@ $footer = d.querySelector(".footer"),
 $mostrarCarritoHead = d.querySelector(".mostrar-carrito-head"),
 $mostrarCarritoBody = d.querySelector(".mostrar-carrito-body"),
 $mostrarCarritoFooter = d.querySelector(".mostrar-carrito-footer"),
-ls = localStorage
+ls = localStorage,
+location = window.location.pathname
 
 function darkModeOn() {
     $aDarkmode.src = "./img/sun.png"
