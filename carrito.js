@@ -29,7 +29,7 @@ export function vaciarCarrito(carrito) {
     $carrito.innerHTML = `<img src="./img/carros2.png" alt="Carrito"> <p> ${carrito.length} </p>
     <a href="./carrito.html"><button id="btnMostrarCarrito">Finalizar</button></a>
     <button id="vaciarCarrito">Vaciar</button>`
-    window.location.href = "./index.html"   
+    mostrarCarrito(carrito)   
 }
 
 export function cargarCarrito(e,carrito) {
