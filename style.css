@@ -1,0 +1,630 @@
+body{
+    margin:0;
+    padding:0;
+    background: rgb(241, 241, 241);
+
+}
+
+.container{
+    width: 100%;
+    height: auto;
+    min-height: 900px;
+
+}
+.main{
+
+    width: 100%;
+    height: auto;
+    min-height: 70vh;
+    display: grid;
+    grid-area: contenido;
+    display: flex;
+    justify-content: center;
+    
+}
+
+footer{
+
+    width: 100%;
+    height: 5vh;
+    background-color: rgb(179, 183, 253);
+    display: grid;
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    z-index: 999;
+    width: 100%;
+    height: 70px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 3px rgb(202, 202, 202);
+    position: sticky;
+    top:0;
+    display: grid;
+    grid-area: header;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "menu menu carrito"; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#cont-header{
+
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 70px;
+}
+.cont-main{
+
+    display: flex;
+    align-items: center;
+    width: 60%;
+    height: 70px;
+}
+
+.cont-main nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin-right: 50px;
+
+}
+.cont-main nav ul a{
+    font-size: 20px;
+    font-weight: bold;
+    color:rgb(15, 15, 15);
+   padding: 14px;
+   text-decoration: none;
+}
+.cont-main nav ul a:hover{
+    
+    color:rgb(34, 138, 56);
+
+}
+
+#imgDarkmode{
+    width: 32px;
+    height: 32px;
+ 
+}
+
+#carrito {
+    width: 40%;
+    height: 70px;
+    display: flex;  
+    align-items: center;
+    justify-content: flex-end; 
+
+}
+
+#carrito img{
+    margin-right: 10px;
+  
+}
+#carrito p{
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 10px;
+  
+}
+
+#carrito button{
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    border-radius: 5px;
+    margin: 8px;
+    background: #318aac;
+    border: 2px solid;
+    border-color: #318aac;
+    position: relative;
+}
+#carrito button:hover{
+    color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+    transition: all 0.2s ease;
+}
+
+.divItems{
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.divLLave{
+
+    width: 15%;
+    min-width: 220px;
+    height: auto;
+    box-shadow: 3px 5px rgb(202, 202, 202);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    
+}
+.divLLave:hover{
+    transition: 0.3s;
+   transform:scale(1.02);
+}
+.divLLave button{
+
+    padding: 10px;
+    margin: 10px;
+    border: 0px;
+    border-radius: 5px;
+    background: rgb(40, 123, 175);
+    color: white;
+    
+}
+
+
+
+.divLLave button:hover{
+
+    background: rgb(105, 191, 245);  
+    
+}
+
+     /* ----------------- CARRITO ----------------- */
+
+     .cont-carrito{
+
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        padding: 20px;
+
+    }
+    
+    .mostrar-carrito{
+
+        width: 70%;
+        height: auto;
+        margin: 0 auto;
+        
+
+    }
+
+    .mostrar-carrito-head{
+
+        width: 100%;
+        height: 50px;
+        float: left;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(192, 192, 192);
+
+    }
+
+    .mostrar-carrito-body{
+        width: 70%;
+        height: auto;
+        float: left;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .mostrar-carrito-body tr{
+        background-color: rgb(188, 192, 248);   
+        text-align: center;
+
+    }
+    .mostrar-carrito-body td{
+        background-color: rgb(208, 211, 255);   
+        padding: 2%;
+        text-align: center;
+
+    }
+
+    .div-carritoVacio { 
+        width: 100%;
+        height: auto;
+        float: left;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .div-carritoVacio div { 
+        width: 300px;
+        height: auto;
+
+ 
+    }
+    .div-carritoVacio img{ 
+        width: 300px;
+        height: auto;
+        margin: 0 auto;
+    }
+    .mostrar-carrito-footer{
+        width: 29%;
+        float: right;
+        height: 250px;
+        border: 1px solid #318aac;
+        border-radius: 5px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+       
+    
+
+    }
+    .mostrar-carrito-footer div{
+        width: 100%;
+        height: 50px;
+        font-weight: bold;
+        font-size: 18px;
+        background-color: rgb(224, 226, 253);     
+        text-align: center;
+
+    }
+    .mostrar-carrito-footer h3{
+        width: 100%;
+        padding: 2%;
+        text-align: center;
+
+    }
+
+    .mostrar-carrito-footer button{
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 0.5em 1.2em;
+        border-radius: 5px;
+        margin: 8px;
+        background: #318aac;
+        border: 2px solid;
+        border-color: #318aac;
+        position: relative;
+    }
+    .mostrar-carrito-footer button:hover{
+        color: rgba(255, 255, 255, 1) !important;
+        box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+        transition: all 0.2s ease;
+    }
+
+
+
+
+
+  /* ----------------- RESPONSIVE ----------------- */
+
+  @media screen and (max-width: 1100px) {
+
+    .mostrar-carrito-body{
+        width: 100%;
+        height: auto;
+        float: left;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .div-carritoVacio { 
+        width: 100%;
+        height: auto;
+        float: left;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .div-carritoVacio div { 
+        width: 300px;
+        height: auto;
+
+ 
+    }
+    .div-carritoVacio img{ 
+        width: 300px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+  .mostrar-carrito-footer{
+    width: 100%;
+    float: right;
+    margin-top: 5px;
+    height: 180px;
+    border: 1px solid #318aac;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+   
+}
+.mostrar-carrito-footer div{
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgb(224, 226, 253);     
+    text-align: center;
+
+}
+.mostrar-carrito-footer h3{
+    width: 100%;
+    height: 20px;
+    padding: 2%;
+    text-align: center;
+
+}
+
+}
+
+
+@media screen and (max-width: 1000px) {
+#cont-header{
+
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 70px;
+}
+
+.cont-main nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin-right: 10px;
+
+}
+}
+
+@media screen and (max-width: 810px) {
+
+    header{
+
+        width: 100%;
+        height: 130px;
+        background: rgb(255, 255, 255);
+        box-shadow: 0px 3px rgb(202, 202, 202);
+        position: sticky;
+        top:0;
+
+    }
+
+    #cont-header{
+
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        height: 130px;
+    }
+
+    .cont-main{
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(232, 247, 255);
+
+    }
+    .cont-main img{ 
+
+        width: 50px;
+        height: 50px;
+
+    }
+    
+    #cont-header nav{
+    margin: 0px;
+    
+    }
+    .cont-main nav ul {
+     
+        display: flex;
+        flex-flow: row wrap;
+        list-style: none;
+        margin: 5px;
+        margin-left: 0px;
+        padding-left: 20px;
+    }
+    .cont-main nav ul a{
+        font-size: 20px;
+        font-weight: bold;
+        color:rgb(15, 15, 15);
+        margin: 6px;
+       padding: 5px;
+       text-decoration: none;
+    }
+    
+    .cont-main nav ul a:hover{
+        color:rgb(34, 138, 56);
+    }
+    
+    #carrito {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cont-carrito{
+
+        width: 85%;
+        height: auto;
+        margin: 0 auto;
+        padding: 10px;
+
+    }
+    
+    .mostrar-carrito{
+
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        
+
+    }
+}
+
+
+    @media screen and (max-width: 420px) {
+
+        header{
+
+            width: 100%;
+            height: 130px;
+            background: rgb(255, 255, 255);
+            box-shadow: 0px 3px rgb(202, 202, 202);
+            position: sticky;
+            top:0;
+    
+        }
+    
+        .cont-header{
+    
+            display: flex;
+            flex-flow: row wrap;
+            width: 95%;
+            height: 130px;
+        }
+    
+        .cont-main{
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(232, 247, 255);
+    
+        }
+        .cont-main img{ 
+    
+            width: 35px;
+            height: 35px;
+    
+        }
+        
+        #cont-header nav{
+        margin: 0px;
+        
+        }
+        .cont-main nav ul {
+         
+            display: flex;
+            flex-flow: row wrap;
+            list-style: none;
+            padding-left: 10px;
+        }
+        .cont-main nav ul a{
+            font-size: 16px;
+            font-weight: bold;
+            color:rgb(15, 15, 15);
+           padding: 4px;
+           text-decoration: none;
+        }
+        
+        .cont-main nav ul a:hover{
+            color:rgb(34, 138, 56);
+        }
+        
+        #carrito {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cont-carrito{
+
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            padding: 10px;
+    
+        }
+        
+        .mostrar-carrito{
+    
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            
+    
+        }
+        }
+    
+         
+   
+    
+        /* ----------------- MODO OSCURO ----------------- */
+        
+
+        .darkContainer {
+            background: rgb(58, 58, 58);
+            color: white;
+        }
+        .darkHeader{
+            background: rgb(12, 12, 12,80);
+            color: white;
+            box-shadow: 3px 5px rgb(29, 29, 29);
+        }
+        .darkA nav ul a{ 
+         color: white;
+        }
+        .darkItem {
+            background: rgb(12, 12, 12);
+            color: white;
+            box-shadow: 3px 5px rgb(51, 51, 51,90);
+        }
+        .darkFooter{
+            background: rgb(12, 12, 12,80);
+            color: white;
+        }
+
+        @media screen and (max-width: 810px) {
+
+            .darkA{ 
+                background-color: rgb(24, 24, 24,90);
+               }
+
+        }
+
+
+        .mostrar-carrito-darkhead{
+
+            background: rgb(12, 12, 12,80);
+
+        }
+        .mostrar-carrito-darkbody tr{
+
+            background: rgb(12, 12, 12,80);
+
+        }
+        .mostrar-carrito-darkbody td{
+
+            background: rgb(34, 34, 34);
+
+        }
+
+        .mostrar-carrito-darkfooter {
+
+            border: 1px solid #000000;
+
+        }
+        .mostrar-carrito-darkfooter div{
+
+            background: rgb(12, 12, 12,80);
+
+        }
