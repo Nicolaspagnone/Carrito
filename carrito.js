@@ -4,7 +4,6 @@ $mostrarCarritoBody = d.querySelector(".mostrar-carrito-body"),
 $mostrarCarritoFooter = d.querySelector(".mostrar-carrito-footer h3"),
 ls = localStorage
 
-
 export function ponerCarrito(carrito) {
     ls.setItem("carrito",JSON.stringify(carrito))
     $carrito.innerHTML = `<img src="./img/carros2.png" alt="Carrito"> <p> ${carrito.length} </p>
@@ -97,7 +96,6 @@ export function sumarProducto(e,carrito,id) {
     console.log(filtrar[0][3], id)
     actualizarCarrito(carrito)   
     
-
 }
 
 export function restarProducto(e,carrito,id) {   
@@ -113,9 +111,9 @@ export function restarProducto(e,carrito,id) {
     <td>$${subtotal}</td>`
     total -= parseInt(filtrar[0][2])
     $mostrarCarritoFooter.innerHTML = `TOTAL: $${total}`
-    
         
     }
+
     if(filtrar[0][3] == 0){
        carrito =  carrito.filter(e => e[3] > 0 )
        
@@ -123,7 +121,6 @@ export function restarProducto(e,carrito,id) {
 
        if(carrito.length === 0) mostrarCarrito(carrito)
         
-
     }
     
     actualizarCarrito(carrito)    
