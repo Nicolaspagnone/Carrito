@@ -195,20 +195,25 @@ header{
     display: block;
     bottom: 30px;
     left: 50%;
-    margin-left: -150px;
+    margin-left: -165px;
     width: 300px;
     height: 30px;
     padding: 15px;
     border-radius: 50px;
-    font-size: 21px;
-    font-weight: bold;
-    color: beige;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
     text-align: center;
-    background-color: #178a00fb;
+    background-color:#157c01fb;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s linear;
+}
+.resBuy b{
+ 
+    color: #f7f0dcfb;
+    font-size: 26px;
+
 }
 .hidden{
     display: none;

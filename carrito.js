@@ -56,11 +56,11 @@ export function cargarCarrito(e,carrito) {
 
    if (consulta) {
     filtrar[0][4] += 1
-    $resBuyP.innerHTML = `Añadiste ${filtrar[0][4]} ${e.target.getAttribute("data-name")} al carrito`
+    $resBuyP.innerHTML = `Añadiste <b>${filtrar[0][4]}</b> ${e.target.getAttribute("data-name")} al carrito`
   
     actualizarCarrito(carrito)  
    }else{
-    $resBuyP.innerHTML = `Añadiste 1 ${e.target.getAttribute("data-name")} al carrito`
+    $resBuyP.innerHTML = `Añadiste <b>1</b> ${e.target.getAttribute("data-name")} al carrito`
        carrito.push([e.target.id,e.target.getAttribute("data-name"),e.target.getAttribute("data-model"),e.target.getAttribute("data-price"),1]) 
        actualizarCarrito(carrito)    
 
