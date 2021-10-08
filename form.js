@@ -11,7 +11,9 @@ export default function sendForm() {
     d.addEventListener("submit",(e)=>{
         const $loader = d.querySelector("#loader"),
                 $form = d.querySelector(".form"),
-                $resOk = d.querySelector("#sendOk")
+                $resOk = d.querySelector("#sendOk"),
+                $resError = d.querySelector("#sendError")
+
         e.preventDefault()
         $loader.classList.remove("loader-none")
         
@@ -24,7 +26,7 @@ export default function sendForm() {
                     body: new FormData(e.target)
                 })
                 if (!res.ok) {
-                    const message = `An error has occured: ${res.status}`;
+                    const message = `<p>${res.status} - Ocurrio un problema</p>`;
                     throw new Error(message);
                   }else{
                     let data = await res.json()
@@ -36,16 +38,18 @@ export default function sendForm() {
                     
                     setTimeout(() => {
                         $resOk.classList.add("loader-none")
-                    }, 4000);
+                    }, 6000);
 
                   }
-                
-
-                
-                
+  
             } catch (err) {
-
-                console.log(err)
+                    $loader.classList.add("loader-none")
+                    $resError.innerHTML = err
+                    $resError.classList.remove("loader-none")
+                setTimeout(() => {
+                    $resError.classList.add("loader-none")
+                }, 6000);
+                
                 
             }
             
