@@ -2,6 +2,8 @@ const d = document,
 $carrito = d.querySelector("#carrito"),
 $mostrarCarritoBody = d.querySelector(".mostrar-carrito-body"),
 $mostrarCarritoFooter = d.querySelector(".mostrar-carrito-footer h3"),
+$resBuy = d.querySelector(".resBuy"),
+$resBuyP = d.querySelector(".resBuy p"),
 ls = localStorage
 
 export function ponerCarrito(carrito) {
@@ -35,20 +37,28 @@ export function cargarCarrito(e,carrito) {
    let nextSibling = e.target.nextElementSibling
    let consulta = carrito.some((el) => el.includes(e.target.id))
    let filtrar = carrito.filter((el) => el.includes(e.target.id))
-   
+   let respuesta = ()=>{
+    $resBuy.classList.remove("resBuyNone")
+    setTimeout(() => {
+        $resBuy.classList.add("resBuyNone")   
+    }, 4000);
+      
+   }
+
    if (consulta) {
     filtrar[0][3] += 1
-    let $lastResponse = `<p style="color:green">Ahora tenes <b>${filtrar[0][3]}</b> ${e.target.id} en el carrito</p>`
-    nextSibling.innerHTML = $lastResponse
-       actualizarCarrito(carrito)    
-       
+    $resBuyP.innerHTML = `Añadiste ${filtrar[0][3]} ${e.target.id} al carrito`
+    respuesta()
+    actualizarCarrito(carrito)  
    }else{
-    let $firstResponse = `<p style="color:green">El producto ${e.target.id} se agrego al carrito</p>`
-    nextSibling.innerHTML = $firstResponse
+    $resBuyP.innerHTML = `Añadiste 1 ${e.target.id} al carrito`
+        respuesta()
        carrito.push([e.target.id,e.target.getAttribute("data-model"),e.target.getAttribute("data-price"),1]) 
        actualizarCarrito(carrito)    
 
    }
+
+
 }
 
 let total = 0

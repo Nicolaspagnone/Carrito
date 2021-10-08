@@ -135,7 +135,7 @@ function returnLlaves() {
         $divLlave.className = "divLLave"
         $divLlave.innerHTML = `
         <img src="./img/llave.png" alt="llave" > 
-        <b>${key}:</b> ${llaves[key][0]}<br>
+        <b>${llaves[key][0]}</b><br>
         <b>Modelo:</b> ${llaves[key][1]}<br>
         <b>Precio:</b> ${llaves[key][2]}<br>
         <button type="submit" id="${key}"
