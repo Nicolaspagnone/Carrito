@@ -10,7 +10,8 @@ export default function sendForm() {
 
     d.addEventListener("submit",(e)=>{
         const $loader = d.querySelector("#loader"),
-                $form = d.querySelector(".form")
+                $form = d.querySelector(".form"),
+                $resOk = d.querySelector("#sendOk")
         e.preventDefault()
         $loader.classList.remove("loader-none")
         
@@ -30,8 +31,12 @@ export default function sendForm() {
 
                     console.log(data)
                     $loader.classList.add("loader-none")
+                    $resOk.classList.remove("loader-none")
                     $form.reset()
                     
+                    setTimeout(() => {
+                        $resOk.classList.add("loader-none")
+                    }, 4000);
 
                   }
                 

@@ -656,10 +656,9 @@ header{
         .form {
             background-color: #15172b;
             border-radius: 20px;
-            width: 320px;
-            height: auto;
+            width: 450px;
+            height: 550px;
             padding: 20px;
-            
             margin-top: 50px;
           }
           
@@ -787,4 +786,10 @@ header{
 
           .loader-none{
               display: none;
+          }
+
+          #sendOk{
+              font-size: 20px;
+              text-align: center;
+                color: #33da12;
           }
