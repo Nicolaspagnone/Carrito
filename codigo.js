@@ -139,6 +139,7 @@ function returnLlaves() {
         <b>Modelo:</b> ${llaves[key][1]}<br>
         <b>Precio:</b> ${llaves[key][2]}<br>
         <button type="submit" id="${key}"
+        data-name="${llaves[key][0]}"
         data-model="${llaves[key][1]}" data-price="${llaves[key][2]}">Comprar</button>
         <p></p>`
         $fragment.appendChild($divLlave)

@@ -34,26 +34,32 @@ export function vaciarCarrito(carrito) {
 }
 
 export function cargarCarrito(e,carrito) {
-   let nextSibling = e.target.nextElementSibling
    let consulta = carrito.some((el) => el.includes(e.target.id))
    let filtrar = carrito.filter((el) => el.includes(e.target.id))
    let respuesta = ()=>{
-    $resBuy.classList.remove("resBuyNone")
+      
+    $resBuy.classList.remove("hidden")  
     setTimeout(() => {
-        $resBuy.classList.add("resBuyNone")   
+        $resBuy.classList.remove("visuallyhidden")
+    }, 100);   
+    setTimeout(() => {
+        $resBuy.classList.add("visuallyhidden")  
     }, 4000);
+    setTimeout(() => {
+        $resBuy.classList.add("hidden")  
+    }, 4500);
       
    }
 
    if (consulta) {
-    filtrar[0][3] += 1
-    $resBuyP.innerHTML = `Añadiste ${filtrar[0][3]} ${e.target.id} al carrito`
+    filtrar[0][4] += 1
+    $resBuyP.innerHTML = `Añadiste ${filtrar[0][4]} ${e.target.getAttribute("data-name")} al carrito`
     respuesta()
     actualizarCarrito(carrito)  
    }else{
-    $resBuyP.innerHTML = `Añadiste 1 ${e.target.id} al carrito`
+    $resBuyP.innerHTML = `Añadiste 1 ${e.target.getAttribute("data-name")} al carrito`
         respuesta()
-       carrito.push([e.target.id,e.target.getAttribute("data-model"),e.target.getAttribute("data-price"),1]) 
+       carrito.push([e.target.id,e.target.getAttribute("data-name"),e.target.getAttribute("data-model"),e.target.getAttribute("data-price"),1]) 
        actualizarCarrito(carrito)    
 
    }
@@ -77,10 +83,10 @@ export function mostrarCarrito(carrito) {
     }else{  
 
     carrito.forEach(e => {
-    let subtotal = e[2] * e[3]
-    $mostrarCarritoBody.insertAdjacentHTML("beforeend",`<tr id="${e[0]}-tr"><td>${e[0]} - ${e[1]}</td>
-    <td><p>${e[3]}  </p><button class="sumar" data-id="${e[0]}">+</button><button class="restar" data-id="${e[0]}">-</button></td>
-    <td>$${e[2]}</td>
+    let subtotal = e[3] * e[4]
+    $mostrarCarritoBody.insertAdjacentHTML("beforeend",`<tr id="${e[0]}-tr"><td>${e[1]} - ${e[2]}</td>
+    <td><p>${e[4]}  </p><button class="sumar" data-id="${e[0]}">+</button><button class="restar" data-id="${e[0]}">-</button></td>
+    <td>$${e[3]}</td>
     <td>$${subtotal}</td></tr>`)
     total += subtotal
     });
@@ -94,13 +100,13 @@ export function mostrarCarrito(carrito) {
 export function sumarProducto(e,carrito,id) {
     let filtrar = carrito.filter((el) => el.includes(id))
     let $llave = d.querySelector(`#${id}-tr`)
-    filtrar[0][3] += 1
-    let subtotal = parseInt(filtrar[0][2]) * parseInt(filtrar[0][3])
-    $llave.innerHTML = `<td>${filtrar[0][0]} - ${filtrar[0][1]}</td>
-    <td><p>${filtrar[0][3]}  </p><button class="sumar" data-id="${filtrar[0][0]}">+</button><button class="restar" data-id="${filtrar[0][0]}">-</button></td>
-    <td>$${filtrar[0][2]}</td>
+    filtrar[0][4] += 1
+    let subtotal = parseInt(filtrar[0][3]) * parseInt(filtrar[0][4])
+    $llave.innerHTML = `<td>${filtrar[0][1]} - ${filtrar[0][2]}</td>
+    <td><p>${filtrar[0][4]}  </p><button class="sumar" data-id="${filtrar[0][0]}">+</button><button class="restar" data-id="${filtrar[0][0]}">-</button></td>
+    <td>$${filtrar[0][3]}</td>
     <td>$${subtotal}</td>`
-    total += parseInt(filtrar[0][2])
+    total += parseInt(filtrar[0][3])
     $mostrarCarritoFooter.innerHTML = `TOTAL: $${total}`
 
     console.log(filtrar[0][3], id)
@@ -112,20 +118,20 @@ export function restarProducto(e,carrito,id) {
     let filtrar = carrito.filter((el) => el.includes(id))
     let $llave = d.querySelector(`#${id}-tr`)
 
-    if(filtrar[0][3] > 0){
-    filtrar[0][3] -= 1
-    let subtotal = parseInt(filtrar[0][2]) * parseInt(filtrar[0][3])
-    $llave.innerHTML = `<td>${filtrar[0][0]} - ${filtrar[0][1]}</td>
-    <td><p>${filtrar[0][3]}  </p><button class="sumar" data-id="${filtrar[0][0]}">+</button><button class="restar" data-id="${filtrar[0][0]}">-</button></td>
-    <td>$${filtrar[0][2]}</td>
+    if(filtrar[0][4] > 0){
+    filtrar[0][4] -= 1
+    let subtotal = parseInt(filtrar[0][3]) * parseInt(filtrar[0][4])
+    $llave.innerHTML = `<td>${filtrar[0][1]} - ${filtrar[0][2]}</td>
+    <td><p>${filtrar[0][4]}  </p><button class="sumar" data-id="${filtrar[0][0]}">+</button><button class="restar" data-id="${filtrar[0][0]}">-</button></td>
+    <td>$${filtrar[0][3]}</td>
     <td>$${subtotal}</td>`
-    total -= parseInt(filtrar[0][2])
+    total -= parseInt(filtrar[0][3])
     $mostrarCarritoFooter.innerHTML = `TOTAL: $${total}`
         
     }
 
-    if(filtrar[0][3] == 0){
-       carrito =  carrito.filter(e => e[3] > 0 )
+    if(filtrar[0][4] == 0){
+       carrito =  carrito.filter(e => e[4] > 0 )
        
        $llave.innerHTML = null
 

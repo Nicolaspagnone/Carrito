@@ -204,14 +204,18 @@ header{
     font-weight: bold;
     color: beige;
     text-align: center;
-    background-color: #178a00ef;
+    background-color: #178a00fb;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 1s ease-in-out;
+    transition: all 0.2s linear;
 }
-.resBuyNone{
+.hidden{
     display: none;
+}
+
+.visuallyhidden{
+opacity: 0;
 }
 
      /* ----------------- CARRITO ----------------- */
