@@ -36,8 +36,9 @@ export function vaciarCarrito(carrito) {
 export function cargarCarrito(e,carrito) {
    let consulta = carrito.some((el) => el.includes(e.target.id))
    let filtrar = carrito.filter((el) => el.includes(e.target.id))
-   let respuesta = ()=>{
-      
+  
+   let intervalo = setTimeout(() => {
+        
     $resBuy.classList.remove("hidden")  
     setTimeout(() => {
         $resBuy.classList.remove("visuallyhidden")
@@ -48,17 +49,18 @@ export function cargarCarrito(e,carrito) {
     setTimeout(() => {
         $resBuy.classList.add("hidden")  
     }, 4500);
-      
-   }
+          
+    }, 0);
+
+    ($resBuy.classList.contains("hidden")) ? intervalo : clearTimeout(intervalo), intervalo
 
    if (consulta) {
     filtrar[0][4] += 1
     $resBuyP.innerHTML = `Añadiste ${filtrar[0][4]} ${e.target.getAttribute("data-name")} al carrito`
-    respuesta()
+  
     actualizarCarrito(carrito)  
    }else{
     $resBuyP.innerHTML = `Añadiste 1 ${e.target.getAttribute("data-name")} al carrito`
-        respuesta()
        carrito.push([e.target.id,e.target.getAttribute("data-name"),e.target.getAttribute("data-model"),e.target.getAttribute("data-price"),1]) 
        actualizarCarrito(carrito)    
 

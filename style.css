@@ -37,7 +37,7 @@ body{
 .img-principal{
     width: 100%;
     min-height: 700px;
-    background-image: url(./img/tiendaImg.jpg);
+    background-image: url(./img/fondo.jpg);
     background-position: center center;
     background-size: cover;
     background-attachment:fixed;
@@ -510,6 +510,7 @@ opacity: 0;
 
 
     @media screen and (max-width: 420px) {
+
 
         header{
 
