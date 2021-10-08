@@ -80,6 +80,7 @@ export function mostrarCarrito(carrito) {
 
         // $mostrarCarritoBody.insertAdjacentHTML("afterend",`<div class="div-carritoVacio"> <div><h2>Su carrito esta vacio</h2><img src="./img/carritoVacio.png"></div></div>`)
         $mostrarCarritoBody.innerHTML = `<div class="div-carritoVacio"> <div><h2>Su carrito esta vacio</h2><img src="./img/carritoVacio.png"></div></div>`
+        total = 0
         $mostrarCarritoFooter.innerHTML = `TOTAL: $${total}`
 
     }else{  
