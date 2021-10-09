@@ -1,6 +1,6 @@
-import {ponerCarrito,vaciarCarrito,cargarCarrito,mostrarCarrito,sumarProducto,restarProducto} from "./carrito.js"
-import {darkMode,darkModeClick} from "./darkmode.js"
-import sendForm from "./form.js"
+import {ponerCarrito,vaciarCarrito,cargarCarrito,mostrarCarrito,sumarProducto,restarProducto} from "./components/carrito.js"
+import {darkMode,darkModeClick} from "./components/darkmode.js"
+import sendForm from "./components/form.js"
 
 const d = document,
 $main = d.querySelector(".main"),
